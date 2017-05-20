@@ -7,4 +7,3 @@
 *.o
 *.so
 publish.sh
-src/LuaHelper/*.*
