@@ -1,23 +1,15 @@
-#include "ECS/Entity/Entity.hpp"
-#include "ECS/Component/PositionComponent.hpp"
 #include <iostream>
+#include "Engine.hpp"
 
 int main(){
-    Entity* ent = new Entity();
-    Entity* ent2 = new Entity();
-    ent->setName("ent1");
-    ent->addComponent(std::type_index(typeid(PositionComponent)), new PositionComponent());
+    Engine* engine = new Engine();
     
-    ent->dump();
-
-
-
-    std::cout << "Cleaning..." << std::endl;
-    
-    delete ent;
-    delete ent2;
-    
-    std::cout << "Cleanup complete" << std::endl;
+    try{
+        engine->run();
+    }
+    catch(const char* e){
+        std::cout << e << std::endl;
+    }
     
     return 0;
 }

@@ -1,5 +1,5 @@
-SOURCE = src
-DROP = drop
+SOURCE = $(PWD)/src
+DROP = $(PWD)/drop
 
 TARGET = driver
 
@@ -11,6 +11,8 @@ install:
 	@$(CC) $(CC_FLAG) \
 	-o $(DROP)/$(TARGET).exe \
 	$(SOURCE)/ECS/Entity/Entity.cpp  \
+	$(SOURCE)/ECS/Component/PositionComponent.cpp \
+	$(SOURCE)/Engine.cpp \
 	$(SOURCE)/$(TARGET).cpp \
 	-l$(LUA_LIB) -ldl
 	

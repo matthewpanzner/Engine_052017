@@ -2,21 +2,23 @@
 #define POSITION_COMPONENT_HPP
 
 #include "Component.hpp"
+
+#include <typeinfo>
  
 class PositionComponent : public Component {
 public:
-    PositionComponent() { this->x = 0; this->y = 0; }
+    PositionComponent();
  
-    inline void setX(const int x) {
+    inline void setX(const double x) {
         this->x = x;
     }
  
-    inline void setY(const int y) {
+    inline void setY(const double y) {
         this->y = y;
     }
     
-    inline int getX() const { return this->x; }
-    inline int getY() const { return this->y; }
+    inline double getX() const { return this->x; }
+    inline double getY() const { return this->y; }
 
     inline virtual std::string dump() const { 
         std::stringstream ss;
@@ -29,8 +31,8 @@ public:
     }
     
 private:
-    int x;
-    int y;
+    double x;
+    double y;
 };
 
 #endif

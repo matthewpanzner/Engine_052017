@@ -6,4 +6,8 @@
 *.exe
 *.o
 *.so
+
+
 publish.sh
+drop/*
+ExternalLibraries/*
